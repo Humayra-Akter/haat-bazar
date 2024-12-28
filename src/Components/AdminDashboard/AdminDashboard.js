@@ -2,177 +2,64 @@ import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 const AdminDashboard = () => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isApplianceOpen, setIsApplianceOpen] = useState(false);
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const toggleAppliance = () => {
-    setIsApplianceOpen(!isApplianceOpen);
-  };
-
   return (
     <div className="flex">
       {/* Sidebar */}
-      <div className="w-1/4 bg-indigo-50 p-4 min-h-screen">
+      <div className="w-1/6 p-4 min-h-screen">
         <ul className="menu">
           <li>
             <Link
-              className="text-primary text-base font-bold hover:text-black"
+              className="text-white text-base font-bold hover:text-black"
               to="/adminDashboard"
             >
-              <span className="flex gap-4">
-                Dashboard
-              </span>
+              <span className="flex gap-4">Dashboard</span>
             </Link>
           </li>
           <hr />
           <li>
             <Link
-              className="text-primary mt-3 text-base font-bold hover:text-black"
+              className="text-white mt-3 text-base font-bold hover:text-black"
               to="/adminDashboard/adminCreate"
             >
-              <span className="flex gap-4">
-                Create Admin
-              </span>
+              <span className="flex gap-4">Overview</span>
             </Link>
           </li>{" "}
           <hr />
           <li>
             <Link
-              className="text-primary mt-3 text-base font-bold hover:text-black"
-              to="/adminDashboard/adminMaidPerDayBookings"
+              className="text-white mt-3 text-base font-bold hover:text-black"
+              to="/adminDashboard/moneyTransaction"
             >
-              <span className="flex gap-4">
-                Maid Per Day Bookings
-              </span>
+              <span className="flex gap-4">Money Transaction</span>
             </Link>
           </li>{" "}
           <hr />
           <li>
             <Link
-              className="text-primary mt-3 text-base font-bold hover:text-black"
-              to="/adminDashboard/acknowledgedMaidBookings"
+              className="text-white mt-3 text-base font-bold hover:text-black"
+              to="/adminDashboard/products"
             >
-              <span className="flex gap-4">
-                Acknowledged Bookings
-              </span>
+              <span className="flex gap-4">Products</span>
             </Link>
-          </li>{" "}
-          <hr />
-          <li>
-            <button
-              onClick={toggleDropdown}
-              className="text-primary mt-3 text-base font-bold hover:text-black"
-            >
-              <span className="flex gap-4">
-                Information
-                <span className="ml-2">{isDropdownOpen ? "▼" : "▶"}</span>
-                <i
-                  className={`ml-2 fas ${
-                    isDropdownOpen ? "fa-caret-up" : "fa-caret-down"
-                  }`}
-                ></i>
-              </span>
-            </button>
-            {isDropdownOpen && (
-              <div className="dropdown-content">
-                <ul>
-                  <li>
-                    <Link
-                      to="/adminDashboard/customer"
-                      className="text-primary text-base font-bold hover:text-black"
-                    >
-                      Customer Information
-                    </Link>
-                  </li>{" "}
-                  <hr />
-                  <li>
-                    <Link
-                      to="/adminDashboard/maid"
-                      className="text-primary text-base font-bold hover-text-black"
-                    >
-                      Maid Information
-                    </Link>
-                  </li>{" "}
-                  <hr />
-                  <li>
-                    <Link
-                      to="/adminDashboard/driver"
-                      className="text-primary text-base font-bold hover-text-black"
-                    >
-                      Driver Information
-                    </Link>
-                  </li>{" "}
-                  <hr />
-                  <li>
-                    <Link
-                      to="/adminDashboard/babysitter"
-                      className="text-primary text-base font-bold hover-text-black"
-                    >
-                      Babysitter Information
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            )}
-          </li>{" "}
-          <hr />
-          <li>
-            <button
-              onClick={toggleAppliance}
-              className="text-primary mt-3 text-base font-bold hover:text-black"
-            >
-              <span className="flex gap-4">
-                Appliance Repair Bookings
-                <span className="ml-2">{isApplianceOpen ? "▼" : "▶"}</span>
-              </span>
-            </button>
-            {isApplianceOpen && (
-              <div className="dropdown-content">
-                <ul>
-                  <li>
-                    <Link
-                      to="/adminDashboard/television"
-                      className="text-primary text-base font-bold hover:text-black"
-                    >
-                      Television Information
-                    </Link>
-                  </li>{" "}
-                  <hr />
-                  <li>
-                    <Link
-                      to="/adminDashboard/washing-machine"
-                      className="text-primary text-base font-bold hover-text-black"
-                    >
-                      Washing-machine Information
-                    </Link>
-                  </li>{" "}
-                  <hr />
-                  <li>
-                    <Link
-                      to="/adminDashboard/refrigerator"
-                      className="text-primary text-base font-bold hover-text-black"
-                    >
-                      Refrigerator Information
-                    </Link>
-                  </li>{" "}
-                  <hr />
-                  <li>
-                    <Link
-                      to="/adminDashboard/oven"
-                      className="text-primary text-base font-bold hover-text-black"
-                    >
-                      Oven Information
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            )}
           </li>
-          {/* Add other menu items here */}
+          <hr />
+          <li>
+            <Link
+              className="text-white mt-3 text-base font-bold hover:text-black"
+              to="/adminDashboard/sellers"
+            >
+              <span className="flex gap-4">Sellers</span>
+            </Link>
+          </li>
+          <hr />
+          <li>
+            <Link
+              className="text-white mt-3 text-base font-bold hover:text-black"
+              to="/adminDashboard/complaints"
+            >
+              <span className="flex gap-4">Complaints</span>
+            </Link>
+          </li>
         </ul>
       </div>
 
