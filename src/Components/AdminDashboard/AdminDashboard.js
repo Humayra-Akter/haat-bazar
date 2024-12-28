@@ -1,29 +1,21 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import DashboardContent from "./DashboardContent";
 
 const AdminDashboard = () => {
   return (
     <div className="flex">
       {/* Sidebar */}
-      <div className="w-1/6 p-4 min-h-screen">
+      <div className="w-1/6 p-4 min-h-screen bg-gray-800">
         <ul className="menu">
           <li>
             <Link
-              className="text-white text-base font-bold hover:text-black"
-              to="/adminDashboard"
-            >
-              <span className="flex gap-4">Dashboard</span>
-            </Link>
-          </li>
-          <hr />
-          <li>
-            <Link
               className="text-white mt-3 text-base font-bold hover:text-black"
-              to="/adminDashboard/adminCreate"
+              to="/adminDashboard/overview"
             >
               <span className="flex gap-4">Overview</span>
             </Link>
-          </li>{" "}
+          </li>
           <hr />
           <li>
             <Link
@@ -32,7 +24,7 @@ const AdminDashboard = () => {
             >
               <span className="flex gap-4">Money Transaction</span>
             </Link>
-          </li>{" "}
+          </li>
           <hr />
           <li>
             <Link
@@ -63,9 +55,11 @@ const AdminDashboard = () => {
         </ul>
       </div>
 
-      {/* Content */}
-      <div className="w-3/4 p-4">
-        <Outlet />
+      {/* Content Section */}
+      <div className="w-5/6 p-4 ">
+        <div className="mt-8">
+          <Outlet />
+        </div>
       </div>
     </div>
   );
